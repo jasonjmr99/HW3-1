@@ -1,6 +1,6 @@
-var x = 210;
-var y = 290;
-var r = 0;
+var x = 230;
+var y = 220
+var w = 150
 
 function setup() {
   createCanvas(400, 400);
@@ -10,26 +10,23 @@ function draw() {
   background(0);
   noStroke();
 
-  // draw smokestack
-  fill(255);
-  rect(195, height, 30, -100);
-
-  // darker as it gets closer to 0
-  push();
-  fill(y);
-  translate(x, y);
-  rotate(r);
-  rect(-10, -10, 20, 20);
-  pop();
+  // draw pipe
+	fill(265)
+  rect(0, 200, x, 20);
   
-  // up 3 pixels
-  y -= 3;
+  // draw drip
+	fill(255, 20, 50)
+  ellipse(x, y, 10);
+	
+	fill(25, 200, 200)
+	ellipse(w, y, 30);
   
-  // rotate 0.05 radians ~= 2.8 degrees per frame
-  r += 0.05
+  // down 3 pixels each frame, but maybe should be accelerating?
+  y = y + 9
   
-  // if reach past the top a bunch
-  if (y < -150) {
-    y = 290;
+  // if invisible for a full “height” amount…
+  if (y > height*2) {
+    // reset
+    y = 220;
   }
 }
