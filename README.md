@@ -11,6 +11,3 @@
   
   
   
-  1. An object is essentialy storage for variable data.
-  2. (0 - 255)
-  3. random (1900,2000)
